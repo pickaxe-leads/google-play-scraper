@@ -31,7 +31,7 @@ const validateAppDetails = (app) => {
   }
   assert.isString(app.contentRating);
 
-  assert.equal(app.androidVersion, '4.4');
+  assert.equal(app.androidVersion, '7.0');
 
   assert.isBoolean(app.available);
   assert.equal(app.priceText, 'Free');
@@ -61,7 +61,7 @@ const validateAppDetails = (app) => {
 
   assert.isBoolean(app.editorsChoice);
 
-  assert.equal(2, app.features.length);
+  assert.equal(0, app.features.length);
 };
 
 describe('App method', () => {
@@ -70,7 +70,7 @@ describe('App method', () => {
       .then((app) => {
         assert.equal(app.url, 'https://play.google.com/store/apps/details?id=com.sgn.pandapop.gp&hl=en&gl=us');
         assert.equal(app.genre, 'Puzzle');
-        assert.equal(app.androidVersionText, '4.4 and up');
+        assert.equal(app.androidVersionText, '7.0 and up');
         validateAppDetails(app);
       });
   });
@@ -84,7 +84,7 @@ describe('App method', () => {
       .then((app) => {
         assert.equal(app.url, 'https://play.google.com/store/apps/details?id=com.sgn.pandapop.gp&hl=es&gl=es');
         assert.equal(app.genre, 'Puzles');
-        assert.equal(app.androidVersionText, '4.4 y versiones posteriores');
+        assert.equal(app.androidVersionText, '7.0 y versiones posteriores');
         assert.equal(app.available, true);
         validateAppDetails(app);
       });
@@ -99,7 +99,7 @@ describe('App method', () => {
       .then((app) => {
         assert.equal(app.url, 'https://play.google.com/store/apps/details?id=com.sgn.pandapop.gp&hl=pt&gl=br');
         assert.equal(app.genre, 'Quebra-cabeça');
-        assert.equal(app.androidVersionText, '4.4 ou superior');
+        assert.equal(app.androidVersionText, '7.0 ou superior');
         assert.equal(app.available, true);
         validateAppDetails(app);
       });
@@ -135,8 +135,8 @@ describe('App method', () => {
         assert.equal(app.url, 'https://play.google.com/store/apps/details?id=com.sgn.pandapop.gp&hl=es&gl=ar');
         assert.isNumber(app.minInstalls);
 
-        assert.equal(app.androidVersion, '4.4');
-        assert.equal(app.androidVersionText, '4.4 y versiones posteriores');
+        assert.equal(app.androidVersion, '7.0');
+        assert.equal(app.androidVersionText, '7.0 y versiones posteriores');
       });
   });
 
